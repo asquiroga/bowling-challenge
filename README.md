@@ -1,2 +1,2 @@
-# bowling-challenge
+# bowling
 Java backend challenge
