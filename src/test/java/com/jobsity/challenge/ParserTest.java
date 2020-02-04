@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.jobsity.challenge.configuration.AppConfiguration;
-import com.jobsity.challenge.exception.BowlingValidationException;
 import com.jobsity.challenge.model.ScoringPoint;
 import com.jobsity.challenge.parser.BowlingParsedData;
 import com.jobsity.challenge.parser.BownlingParser;
@@ -37,14 +36,14 @@ public class ParserTest extends TestCase {
 
 	public void testgetInexistentPlayer() throws BowlingParserException {
 		BowlingParsedData data = parseTestData();
-		
+
 		List<ScoringPoint> points = data.getPlayerPoints("Richard");
 		assertNull(points);
 	}
 
 	public void testFirstPlayerData() throws BowlingParserException {
 		BowlingParsedData data = parseTestData();
-		
+
 		List<ScoringPoint> points = data.getPlayerPoints("Dylan");
 		assertEquals(14, points.size());
 		assertEquals(9, points.get(4).getNumber());
@@ -54,7 +53,7 @@ public class ParserTest extends TestCase {
 
 	public void testSecondPlayerData() throws BowlingParserException {
 		BowlingParsedData data = parseTestData();
-		
+
 		List<ScoringPoint> points = data.getPlayerPoints("Joseph");
 		assertEquals(12, points.size());
 		assertEquals(10, points.get(7).getNumber());
